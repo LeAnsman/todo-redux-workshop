@@ -1,29 +1,27 @@
 import { useDispatch } from "react-redux";
 import { deleteTask, toggleTask } from "./store";
 import "./styles.css";
-const TaskItem = (props) => {
-  const { task } = props;
-
+const TaskItem = ({ task }) => {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <div className="todo__item__container">
       <label>
         <input
-          type="checkbox"
           checked={task?.done}
           onChange={() => dispatch(toggleTask(task?.id))}
+          type="checkbox"
+          className="todo__item__checkbox"
         />
         {task?.text}
-
-        <span
-          onClick={() => dispatch(deleteTask(task?.id))}
-          role="button"
-          style={{ padding: "5px", marginLeft: "20px" }}
-        >
-          X
-        </span>
       </label>
+      <button
+        onClick={() => dispatch(deleteTask(task?.id))}
+        type="button"
+        className="todo__item__btn--delete"
+      >
+        &#215;
+      </button>
     </div>
   );
 };

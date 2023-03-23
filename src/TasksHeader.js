@@ -7,8 +7,8 @@ const TasksHeader = () => {
 
   return (
     <header>
-      <h1>React Todo List</h1>
-      <p>
+      <h1 className="todo__title">React Todo List</h1>
+      <p className="todo__remaining">
         Tâches à faire : <strong>{undoneTasks?.length}</strong>
       </p>
     </header>

@@ -6,13 +6,11 @@ import TasksList from "./TasksList";
 export default function App() {
   return (
     <div className="container">
-      <article>
+      <div className="wrapper">
         <TasksHeader />
         <TasksList />
-        <footer>
-          <TaskForm />
-        </footer>
-      </article>
+        <TaskForm />
+      </div>
     </div>
   );
 }

@@ -17,10 +17,11 @@ const TaskForm = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="todo__form">
       <input
         type="text"
         placeholder="Ajouter une tâche"
+        className="todo__form__input"
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
