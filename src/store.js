@@ -1,4 +1,15 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
+import storage from "redux-persist/lib/storage";
+import { combineReducers } from "@reduxjs/toolkit";
+import {
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
 
 const initialState = [
   { id: 1, text: "Faire les courses", done: false },
@@ -28,10 +39,23 @@ const todoSlice = createSlice({
   },
 });
 
-export const { addTask, deleteTask, toggleTask } = todoSlice.actions;
+const persistConfig = {
+  key: "todo",
+  storage,
+};
+
+const reducers = combineReducers({ todo: todoSlice.reducer });
+
+const persistedReducer = persistReducer(persistConfig, reducers);
 
 export const store = configureStore({
-  reducer: {
-    todo: todoSlice.reducer,
-  },
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
+
+export const { addTask, deleteTask, toggleTask } = todoSlice.actions;
