@@ -1,26 +1,5 @@
-# React to redux workshop
+# React to Redux workshop
 
-1.
-```git      
-git clone git@github.com:LukaB15/redux-workshop.git
-```
-2.
-```terminal
-cd redux-workshop
-```
-3.
-```terminal
-npm install
-```
-4.
-```terminal
-npm install @reduxjs/toolkit react-redux
-```
-5.
-```terminal
-npm start
-```
+Refactoring an app from props drilling in React to state management in Redux.
 
-
-# todo-redux-workshop
-# todo-redux-workshop
+Workshop made by [Luka](https://github.com/LukaB15) !
