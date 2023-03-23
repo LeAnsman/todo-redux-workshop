@@ -1,0 +1,36 @@
+body{
+      background-image: url(../public/bck.jpg);
+      font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+      display: flex;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 200px;
+}
+h1{
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 45px;
+}
+header{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+article{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      padding-top: 5px;
+      padding-left: 25px;
+      padding-right: 25px;
+      padding-bottom: 30px;
+      border-radius: 20px;
+      border: 1px solid black;
+
+}
+footer{
+      padding-top: 20px;
+}
